@@ -1,4 +1,5 @@
 require 'router'
+require 'database'
 
 use Rack::CommonLogger
 use Rack::ShowExceptions
