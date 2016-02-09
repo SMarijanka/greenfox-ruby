@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem 'database_cleaner'
 gem 'minitest'
 gem 'rack-test'
 gem 'rake'
