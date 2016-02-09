@@ -4,6 +4,9 @@ require 'controllers/update_status'
 require 'controllers/show_status_by_id'
 require 'controllers/delete_status'
 require 'controllers/create_friendships'
+require 'controllers/list_friends'
+require 'controllers/list_tweets'
+require 'controllers/list_alltweets'
 require 'json'
 
 class Router
@@ -14,7 +17,10 @@ class Router
       { pattern: %r{^\/statuses\/update$}, method: 'POST', handler: Controllers::UpdateStatus },
       { pattern: %r{^\/statuses\/showbyid$}, method: 'GET', handler: Controllers::ShowStatusById },
       { pattern: %r{^\/statuses\/destroy$}, method: 'DELETE', handler: Controllers::DeleteStatus},
-      { pattern: %r{^\/friendships\/create$}, method: 'POST', handler: Controllers::CreateFriendship}
+      { pattern: %r{^\/friendships\/create$}, method: 'POST', handler: Controllers::CreateFriendship},
+      { pattern: %r{^\/friends\/list$}, method: 'GET', handler: Controllers::ListFriends},
+      { pattern: %r{^\/timeline\/users$}, method: 'GET', handler: Controllers::ListTweets},
+      { pattern: %r{^\/timeline\/list$}, method: 'GET', handler: Controllers::ListAllTweets}
     ].freeze
   end
 
